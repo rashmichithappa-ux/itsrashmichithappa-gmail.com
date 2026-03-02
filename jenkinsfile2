@@ -12,7 +12,7 @@ pipline{
                 sh'''
                 #! /bin/bash
                 pwd 
-                ls -ltri
+                ls -ltr
                 sleep 5
             }
             echo("this is stage 2")
