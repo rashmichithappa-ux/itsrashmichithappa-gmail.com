@@ -1,1 +1,22 @@
-
+pipline{
+    agent any
+    stages{
+        stage('STAGE1){
+            steps{
+                sh 'sleep 5'
+                echo " this is the stage1"
+            }
+        }
+        stage('STAGE2'){
+            steps{
+                sh'''
+                #! /bin/bash
+                pwd 
+                ls -ltri
+                sleep 5
+            }
+            echo("this is stage 2")
+        }
+    }
+    
+}
