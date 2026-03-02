@@ -1,0 +1,26 @@
+pipline{
+    agent {label 'slave1 && slave2'}
+    agent {label 'slave1 || slave2'}
+    agent { label '!master'}
+    stages{
+        stage('STAGE1'){
+            steps{
+                sh '''
+                sleep 5
+                echo " this is a linux command"
+                '''
+            }
+        }
+        stage('STAGE2'){
+            steps{
+                echo "building java code"
+                sh'''
+                #! /bin/bash
+                sleep 5
+                '''
+            }
+            echo("this is stage 2")
+        }
+    }
+    
+}
