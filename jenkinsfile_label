@@ -1,4 +1,5 @@
 pipline{
+    agent none
     agent {label 'slave1'}
     stages{
         stage('STAGE1'){
