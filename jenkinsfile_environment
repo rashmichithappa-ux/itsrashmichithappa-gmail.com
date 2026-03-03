@@ -1,21 +1,35 @@
-pipeline{
+pipeline {
     agent any
 
     environment {
-        DOCKER_USER = 'rashmiyadav'
-        AWS_ACCESS_KEY = '9380557521'
+       DOCKER_USER = 'jaintpharsha'
+       AWS_ACCESS_KEY = '65197561895639156'
     }
 
     stages {
-        stag('STAGE1') {
+        stage('STAGE1') {
+            environment {
+                STAGE = 'stage1'
+            }
+                
             steps {
-                echo "DOCKER_USER :${DOCKER_USER}"
-                echo "AWS_ACCESS_NEW :${AWS_ACCESS_NEW}"
-
-                sh '''
-
-                 env
-                '''
+                echo "DOCKER_USER: ${env.DOCKER_USER}"
+                echo "AWS_ACCESS_KEY: ${env.AWS_ACCESS_KEY}"
+                echo "STAGE: ${env.STAGE}"
+            sh '''
+                env
+            '''
+            }
+        }
+        
+         stage('STAGE2') {
+            steps {
+               echo "DOCKER_USER: ${env.DOCKER_USER}"
+               echo "AWS_ACCESS_KEY: ${env.AWS_ACCESS_KEY}"
+               echo "STAGE: ${env.STAGE}"
+               sh '''
+                   env
+               '''
             }
         }
     }
