@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-       DOCKER_USER = 'jaintpharsha'
+       DOCKER_USER = 'rashmiyadav'
        AWS_ACCESS_KEY = '65197561895639156'
     }
 
