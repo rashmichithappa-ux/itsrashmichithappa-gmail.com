@@ -4,7 +4,7 @@ pipline{
     parameters{
         string(name: 'NAME',defaultvalue: '',description: 'please tell me')
         booleanparam(name: 'SKIP_TEST',default: '',description: 'Want to skip test')
-        string(name: 'NAME', choices: ['master','stagging','prod'],description: 'please tell me')
+        choice(name: 'NAME', choices: ['master','stagging','prod'],description: 'please tell me')
     }
     stages{
         stage('STAGE1'){
