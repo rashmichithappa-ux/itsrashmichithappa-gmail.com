@@ -1,0 +1,22 @@
+pipeline{
+    agent any
+
+    environment {
+        DOCKER_USER = 'rashmiyadav'
+        AWS_ACCESS_KEY = '9380557521'
+    }
+
+    stages {
+        stag('STAGE1') {
+            steps {
+                echo "DOCKER_USER :${DOCKER_USER}"
+                echo "AWS_ACCESS_NEW :${AWS_ACCESS_NEW}"
+
+                sh '''
+
+                 env
+                '''
+            }
+        }
+    }
+}
