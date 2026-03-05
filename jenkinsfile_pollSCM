@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+    
+    triggers{
+        pollSCM('H/5 * * * *')
+    }
+    environment {
+        CURRENT_ENV = 'prod'
+    }
+
+    stages {
+        stage('CEHCKOUT_REPOA') {
+            steps {
+                checkout ([ $class: 'GitSCM',
+                            branches: [[name: '*/main']], 
+                            extensions: [], 
+                            userRemoteConfigs: [[
+                                credentialsId: 'jaintpharsha', 
+                                url: 'https://github.com/jaintpharsha/mern_3tire.git'
+                            ]]
+                        ])
+               
+                sh '''
+                    echo GIT_BRANCH: $GIT_BRANCH
+                    echo BRANCH_NAME: $BRANCH_NAME
+                '''
+            }
+        }
+
+        stage('when environment') {
+            when {
+                environment name: 'CURRENT_ENV', value: 'prod'
+            }
+            steps {
+                echo "This is FINAL running"
+                sh '''
+                    pwd
+                    ls -lrt
+                    sleep 5
+                '''
+            }
+        }
+    }
+}
