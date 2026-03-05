@@ -15,7 +15,7 @@ pipeline {
                             branches: [[name: '*/main']], 
                             extensions: [], 
                             userRemoteConfigs: [[
-                                credentialsId: 'jaintpharsha', 
+                                credentialsId: 'rashmiyadav', 
                                 url: 'https://github.com/rashmichithappa-ux/itsrashmichithappa-gmail.com.git'
                             ]]
                         ])
