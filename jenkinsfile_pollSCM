@@ -21,8 +21,8 @@ pipeline {
                         ])
                
                 sh '''
-                    echo GIT_BRANCH: $GIT_BRANCH
-                    echo BRANCH_NAME: $BRANCH_NAME
+                    echo GIT_MAIN: $GIT_MAIN
+                    echo MAIN_NAME: $MAIN_NAME
                 '''
             }
         }
