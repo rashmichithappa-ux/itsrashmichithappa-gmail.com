@@ -16,7 +16,7 @@ pipeline {
                             extensions: [], 
                             userRemoteConfigs: [[
                                 credentialsId: 'jaintpharsha', 
-                                url: 'https://github.com/jaintpharsha/mern_3tire.git'
+                                url: 'https://github.com/rashmichithappa-ux/itsrashmichithappa-gmail.com.git'
                             ]]
                         ])
                
